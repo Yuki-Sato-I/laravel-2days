@@ -42,7 +42,6 @@ class GithubController extends Controller
     {
         $token = $request->session()->get('github_token', null);
         $user = Socialite::driver('github')->userFromToken($token);
-
         $client = new \GuzzleHttp\Client();
         $res = $client->request('POST', 'https://api.github.com/repos/' . $user->user['login'] . '/' . $request->input('repo') . '/issues', [
             'auth' => [$user->user['login'], $token],
