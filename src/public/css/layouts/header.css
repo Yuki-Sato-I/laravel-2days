@@ -1,0 +1,14 @@
+.header-btn {
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+}
+
+.container-header {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.container-fluid {
+    text-align: center;
+}

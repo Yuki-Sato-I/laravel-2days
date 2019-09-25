@@ -1,11 +1,11 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
+@extends('layouts/default')
 
-        <title>ログイン画面</title>
-    </head>
-    <body>
-        <a href="/login/github">githubアカウントでログイン</a>
-    </body>
-</html>
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/layouts/login.css') }}">
+@endsection
+
+@section('title', 'ログイン画面')
+
+@section('content')
+    <a class="btn btn-primary btn-lg login-btn" href="/login/github">githubアカウントでログイン</a>
+@endsection
