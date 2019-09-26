@@ -16,7 +16,7 @@
         <div class="post-container">
             <div class="post">
                 <div class="post-upper">
-                    <span>{{ $post->user->github_id }}</span>
+                    <a href="/users/{{ $post->user->id }}"><span>{{ $post->user->github_id }}</span></a>
                     @if (session('github_id') === $post->user->github_id)
                         <form action="/posts/{{ $post['id'] }}" method="post" id="del" style="display: inline-block;">
                             @csrf
