@@ -16,7 +16,7 @@
         <label for="image">写真を選択(png,jpeg,jpgのみ)</label>
         <input type="file" id="image" name="image" accept="image/png, image/jpeg, image/jpg" required>
 
-        <label for="content">商品詳細</label>
+        <label for="content">キャプション</label>
         <textarea name="title" id="content" rows="4" class="form-control" maxlength="200" required></textarea>
 
         <div style="margin: 10px auto;">
