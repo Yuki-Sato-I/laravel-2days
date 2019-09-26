@@ -16,7 +16,7 @@
         <div class="post-container">
             <div class="post">
                 <div class="post-upper">
-                    <span>{{ $post->user->github_id }}</span>
+                    <a href="/users/{{ $post->user->id }}"><span>{{ $post->user->github_id }}</span></a>
                     @if (session('github_id') === $post->user->github_id)
                         <form action="/posts/{{ $post['id'] }}" method="post" id="del" style="display: inline-block;">
                             @csrf
@@ -30,11 +30,16 @@
                     {{ $post->title }}
                 </div>
                 <div class="post-lower">
-                    {{-- @if ($post->likes ===) --}}
-                        <a href="#" class="fas fa-heart">{{ count($post->likes) }} </a> 
-                    {{-- @else --}}
-                        <a href="#" class="far fa-heart">{{ count($post->likes) }} </a>
-                    {{-- @endif --}}
+                    @if (session('login_user'))
+                        {{-- @if ($post->likes ===) --}}
+                        <a href="#" class="fas fa-heart">{{ count($post->likes) }}</a> 
+                        {{-- @else --}}
+                        <a href="#" class="far fa-heart">{{ count($post->likes) }}</a>
+                        {{-- @endif --}}
+                    @else
+                        <span class="far fa-heart">{{ count($post->likes) }}</span>
+                    @endif
+
                     <a href="/posts/{{$post->id}}/likes" >いいねしたユーザー</a>
                 </div>
             </div>
