@@ -7,11 +7,10 @@ use App\Model\Post;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-
-        $posts = Post::all();
-
+        $posts = Post::orderBy('created_at', 'DESC')->paginate(10);
+        
         return view('home.index', ['posts' => $posts]);
     }
 }

@@ -23,10 +23,13 @@ class PostController extends Controller
     
         //新規登録ページ
         public function create(){
+            if(!session('login_user')) {
+                return redirect('home');
+            }
             return view('post.create');
         }
     
-        //商品登録
+        //登録
         public function store(Request $request){
             $title = $request->title;
             $token = $request->session()->get('github_token', null);
@@ -52,17 +55,17 @@ class PostController extends Controller
             return redirect('/home')->with('flash', $flash);
         }
     
-        //編集ページ
+        //編集
         public function edit($id){
 
         }
     
-        //商品編集
+        //編集
         public function update($id, Request $request){
 
         }
     
-        //商品削除
+        //削除
         public function destroy($id){
             Post::where('id', $id)->delete();
             $flash = ["success" => "削除しました"];

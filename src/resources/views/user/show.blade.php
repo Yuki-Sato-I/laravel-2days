@@ -18,11 +18,7 @@
     <div class="container">
         <div class="user-container">
             <div class="user-div">
-                @if (!$user->image)
-                    <img src="{{ asset('image/noimage.png') }}" width="250" height="250">
-                @else 
-                    <img src="{{ $user->image }}" width="100" height="100">
-                @endif
+                <img src="https://github.com/{{ $user->github_id }}.png" width="250" height="250">
             </div>
             <div class="user-div">
                 <div class="user-font">{{ $user->github_id }}</div>
