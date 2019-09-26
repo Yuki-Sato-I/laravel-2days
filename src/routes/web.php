@@ -29,3 +29,6 @@ Route::post('user', 'User\UserController@updateUser');
 
 Route::get('home', 'HomeController@index');
 Route::resource('posts', 'PostController');
+
+Route::get('posts/{id}/likes', 'LikeController@index');
+Route::get('users/{id}', 'UserController@show');
