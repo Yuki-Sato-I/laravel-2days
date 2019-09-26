@@ -4,21 +4,22 @@
 <link rel="stylesheet" href="{{ asset('css/like/index.css') }}">
 @endsection
 
-{{-- @section('script')
-  <script src="{{ asset('js/post.js') }}" type="text/javascript"></script> 
-@endsection --}}
-
 @section('title', 'いいねしたユーザー')
 
 @section('content')
-@foreach ($post->likes as $like)
-    {{-- {{ $like->user }} --}}
-    @if (!$like->user->image)
-        <img src="{{ asset('image/noimage.png') }}" width="100" height="100">
-    @else 
-        <img src="{{ $like->user->image }}" width="100" height="100">
+<div class="container">
+    @if (count($post->likes) !== 0)
+        @foreach ($post->likes as $like)
+            <div class="user">
+                <a href="/users/{{$like->user->id}}"><img src="https://github.com/{{ $like->user->github_id }}.png" width="100" height="100"></a>
+                <a href="/users/{{$like->user->id}}">{{ $like->user->github_id }}</a>
+            </div>
+        @endforeach
+    @else
+        <div class="user" style="text-align: center;">
+            いいねしたユーザーはいません
+        </div>
     @endif
 
-    <a href="/users/{{$like->user->id}}">{{ $like->user->github_id }}</a>
-@endforeach
+</div>
 @endsection
