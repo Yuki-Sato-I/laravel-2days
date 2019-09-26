@@ -18,10 +18,10 @@
                 <div class="post-upper">
                     <a href="/users/{{ $post->user->id }}"><span>{{ $post->user->github_id }}</span></a>
                     @if (session('github_id') === $post->user->github_id)
-                        <form action="/posts/{{ $post['id'] }}" method="post" id="del" style="display: inline-block;">
+                        <form action="/posts/{{ $post->id }}" method="post" id="del{{ $post->id }}" style="display: inline-block;">
                             @csrf
                             {{ method_field('delete') }}
-                        <a onclick="deleteGoods(this);" href="#" class="btn btn-danger btn-sm">削除</a>
+                            <a onclick="deleteGoods(this, {{ $post->id }});" href="#" class="btn btn-danger btn-sm">削除</a>
                         </form>
                     @endif
                 </div>
