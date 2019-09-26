@@ -1,0 +1,27 @@
+.user-div {
+    display: inline-block;
+    height: 250px;
+    width: 250px;
+    vertical-align: top;
+    line-height: 250px;
+    margin-right: 150px;
+    text-align: center;
+}
+
+.user-font {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.good {
+    text-align: center;
+    display: inline-block;
+    height: 250px;
+    width: 250px;
+    vertical-align: top;
+}
+
+.good .container {
+    margin-top: 100px;
+    width: 250px;
+}
