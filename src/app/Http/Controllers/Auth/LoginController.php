@@ -68,4 +68,9 @@ class LoginController extends Controller
 
         return redirect('home');
     }
+
+    public function logout(Request $request){
+        $request->session()->forget('github_token');
+        return redirect('home');
+    }
 }
