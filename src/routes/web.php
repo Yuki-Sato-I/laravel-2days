@@ -15,10 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/user', 'UserController@index');
 
 Route::get('bbs', 'BbsController@index');
 Route::post('bbs', 'BbsController@create');
+Route::get('logout', 'Auth\LoginController@logout');
 
 Route::get('github', 'Github\GithubController@top');
 Route::post('github/issue', 'Github\GithubController@createIssue');
