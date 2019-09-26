@@ -19,6 +19,6 @@
         <img src="{{ $like->user->image }}" width="100" height="100">
     @endif
 
-    {{ $like->user->github_id }}
+    <a href="/users/{{$like->user->id}}">{{ $like->user->github_id }}</a>
 @endforeach
 @endsection
