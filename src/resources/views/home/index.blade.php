@@ -27,7 +27,7 @@
                 </div>
                 <img src="{{ $post['image'] }}">
                 <div class="post-content">
-                    {{ $post->title }}
+                    <p style="word-wrap: break-word;">{!! nl2br(e($post->title)) !!}</p>
                 </div>
                 <div class="post-lower">
                     @if (session('login_user'))
