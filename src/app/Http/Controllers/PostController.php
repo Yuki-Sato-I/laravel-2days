@@ -23,7 +23,7 @@ class PostController extends Controller
     
         //新規登録ページ
         public function create(){
-            if(!session('login_user')) {
+            if(!session('github_token')) {
                 return redirect('home');
             }
             return view('post.create');
