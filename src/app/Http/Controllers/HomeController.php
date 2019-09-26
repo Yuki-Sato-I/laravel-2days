@@ -9,8 +9,8 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        $posts = Post::paginate(10);
-
+        $posts = Post::orderBy('created_at', 'DESC')->paginate(10);
+        
         return view('home.index', ['posts' => $posts]);
     }
 }
