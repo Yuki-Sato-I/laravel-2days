@@ -65,12 +65,16 @@ class LoginController extends Controller
             DB::insert('insert into public.user (image, github_id, created_at, updated_at) values (?, ?, ?, ?)', ["", $github_user->user['login'], $now, $now]);
         }
         $request->session()->put('github_token', $github_user->token);
+        $request->session()->put('github_id', $github_user->user['login']);
+        $request->session()->put('login_user', $app_user);
 
         return redirect('home');
     }
 
     public function logout(Request $request){
         $request->session()->forget('github_token');
+        $request->session()->forget('github_id');
+        $request->session()->forget('login_user');
         return redirect('home');
     }
 }
