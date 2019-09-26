@@ -31,4 +31,6 @@ Route::get('home', 'HomeController@index');
 Route::resource('posts', 'PostController');
 
 Route::get('posts/{id}/likes', 'LikeController@index');
+Route::post('posts/{id}/likes', 'LikeController@store');
+Route::delete('posts/{id}/likes', 'LikeController@destroy');
 Route::get('users/{id}', 'UserController@show');
