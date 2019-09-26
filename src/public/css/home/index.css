@@ -1,4 +1,38 @@
 .post-container {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.post {
+    border: double 10px black;
+}
+
+.post-upper {
     width: 95%;
     margin: 0 auto;
+    border-bottom: double 10px black;
+    text-align: right;
+    height: 40px;
+}
+
+.post img {
+    display: block;
+    margin: 0 auto;
+    width: 95%;
+}
+
+.post .post-content {
+    width: 95%;
+    margin: 0 auto;
+    height: 150px;
+}
+
+
+.post-upper span {
+    float: left;
+    font-size: 25px;
+}
+
+.post-lower {
+    text-align: right;
 }
