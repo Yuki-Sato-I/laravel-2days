@@ -18,7 +18,8 @@
                 {{ $post->user->github_id }}
                 <img src="{{ $post['image'] }}" width="100" height="100">
                 {{ $post->title }}
-                {{ count($post->likes) }}
+                <a href="#" >{{ count($post->likes) }} </a>
+                <a href="/posts/{{$post->id}}/likes" >いいねしたユーザー</a>
                 <form action="/posts/{{ $post['id'] }}" method="post" id="del" style="display: inline-block;">
                     @csrf
                     {{ method_field('delete') }}
